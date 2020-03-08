@@ -47,7 +47,6 @@ public class UserService {
     public void saveOrUpdate(User updateUser){
         userRepository.save(updateUser);
     }
-
     public User createUser(User newUser) {
         newUser.setToken(UUID.randomUUID().toString());
         newUser.setStatus(UserStatus.ONLINE);

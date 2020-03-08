@@ -98,15 +98,9 @@ public class UserController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public UserPostDTO updateUser(@RequestBody UserPostDTO userPostDTO, @PathVariable Long userId){
-
         User user = userService.getByUserId(userId);
-
         if(!userPostDTO.getUsername().isEmpty()){
             user.setUsername(userPostDTO.getUsername());
-        }
-
-        if(!userPostDTO.getPassword().isEmpty()){
-            user.setPassword(userPostDTO.getPassword());
         }
         if(null!=userPostDTO.getBirthDate()) {
             user.setBirthDate(userPostDTO.getBirthDate());
